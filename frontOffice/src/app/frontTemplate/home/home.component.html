@@ -1,0 +1,119 @@
+<!-- Banner Section Start -->
+
+<div class="banner-section section mb-90">
+    <div class="col-12 mb-40">
+    <div class="section-title-one" data-title=""><h1></h1></div>
+</div><!-- Section Title End -->
+
+    <div class="container">
+        <div class="row">
+        
+            <!-- Banner -->
+            <div class="col-12">
+                <div class="banner"><a href="#"><img src="assets/images/home4.png" alt="Banner"></a></div>
+            </div>
+            
+        </div>
+    </div>
+</div><!-- Banner Section End -->
+
+<!-- Feature Section Start -->
+<div class="feature-section section mb-60">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <!-- Feature Start -->
+                <div class="feature feature-shipping">
+                    <div class="feature-wrap">
+                        <div class="icon"><img src="assets/images/icons/feature-van.png" alt="Feature"></div>
+                        <h4>LIVRAISON GRATUITE</h4>
+                        <p>à partir de 100€</p>
+                    </div>
+                </div><!-- Feature End -->
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <!-- Feature Start -->
+                <div class="feature feature-guarantee">
+                    <div class="feature-wrap">
+                        <div class="icon"><img src="assets/images/icons/feature-walet.png" alt="Feature"></div>
+                        <h4>Prix Imbattables</h4>
+                        <p>Pour toute l'année </p>
+                    </div>
+                </div><!-- Feature End -->
+            </div>
+            
+            <div class="col-lg-4 col-md-6 col-12 mb-30">
+                <!-- Feature Start -->
+                <div class="feature feature-security">
+                    <div class="feature-wrap">
+                        <div class="icon"><img src="assets/images/icons/feature-shield.png" alt="Feature"></div>
+                        <h4>Paiement sécurisé</h4>
+                        <p> 100% sécurisé </p>
+                    </div>
+                </div><!-- Feature End -->
+            </div>
+            
+        </div>
+    </div>
+</div><!-- Feature Section End -->
+
+
+<!-- New Arrival Product Section Start -->
+<div class="product-section section mb-60">
+    <div class="container">
+        <div class="row">
+            
+            <!-- Section Title Start -->
+            <div class="col-12 mb-40">
+                <div class="section-title-one" data-title="Meilleures ventes"><h1>Meilleures ventes</h1></div>
+            </div><!-- Section Title End -->
+            
+            <div class="col-12">
+                <div class="row">
+                    
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-12 pb-30 pt-10" *ngFor="let product of products">
+                        <!-- Product Start -->
+                        <div class="ee-product">
+
+                            <!-- Image -->
+                            <div class="image" >
+
+
+                                <a href="single-product.html" class="img"><img src="http://localhost:3000/image/{{product.images[0]}}" alt="Product Image"></a>
+                                <a routerLink="/product/{{product._id}}" href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>Ajouter</span></a>
+
+                            </div>
+
+                            <!-- Content -->
+                            <div class="content">
+
+                                <!-- Category & Title -->
+                                <div class="category-title" >
+                                    <a href="#" class="cat">{{product.category.name}}</a>
+                                    <h5 class="title">{{product.title| titlecase}}</h5>
+
+                                </div>
+
+                                <!-- Price & Ratting -->
+                                <div class="price-ratting">
+
+                                    <h5 class="price">{{product.price}}.00€</h5>
+                                   
+
+                                </div>
+
+                            </div>
+
+                        </div><!-- Product End -->
+                    
+
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div><!-- New Arrival Product Section End -->

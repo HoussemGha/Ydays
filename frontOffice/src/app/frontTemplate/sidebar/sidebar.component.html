@@ -1,0 +1,22 @@
+<div class="shop-sidebar mb-30">
+                   
+    <h4 class="title">Catégories</h4>
+    
+    <ul class="sidebar-category">
+        <li *ngFor="let category of categories"><a routerLink="/filter/{{category._id}}">{{category.name}}</a></li>
+    </ul>
+    
+</div>
+
+
+   
+
+<div class="shop-sidebar mb-30">
+   
+    <h4 class="title">Entreprises</h4>
+    
+    <ul class="sidebar-brand">
+        <li *ngFor="let provider of providers"><a href="#">{{provider.company}}</a></li>
+    </ul>
+    
+</div>

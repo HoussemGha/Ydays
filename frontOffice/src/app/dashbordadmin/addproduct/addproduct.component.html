@@ -1,0 +1,91 @@
+<!-- Register Section Start -->
+<div class="register-section section mt-90 mb-90">
+    <div class="container">
+      <form  class="row" [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      
+           
+            <!-- Register -->
+            <div class="col-md-6 col-12 d-flex">
+                <div>
+                    
+                    <h3>Ajout de produit </h3>                    
+                    <!-- Register Form -->
+                        <div class="row">
+                            <div class="col-12 mb-30 ">
+                              <input type="text" placeholder="Référence du produit" formControlName="reference">
+                              <div *ngIf="submitted && f.reference.errors" class="validaterform">
+                                <div *ngIf="f.reference.errors.required" class="col-12 mb-30 ">Veuillez entrer reference.</div>
+                            </div>
+                            </div>
+                            
+                            <div class="col-12 mb-30"><input type="text" placeholder="Titre du produit" formControlName="title"></div>   
+                            <div class="col-12 mb-30"><input type="text" placeholder="Prix du produit" formControlName="price"></div>
+                            <div class="col-12 mb-30"><input type="text" placeholder="couleur du produit" formControlName="color"></div>
+
+                            <div class="col-12 mb-30"><input type="text" placeholder="Quantité du produit" formControlName="quantity"></div>
+                           <div class="row" style="width: 100%;">
+                            <div class="col-6">
+                              <label style="color:brown;">TOUTES CATÉGORIES</label>
+                              <div *ngFor="let category of categories">
+                                <input type="radio" formControlName="category" [value]="category._id" style="display: -webkit-inline-box;margin-right: 7px;" (change)="getsubCategories($event)">
+                                <label>{{category.name}}</label>
+                            </div>
+                            </div>
+                            <div class="col-6">
+                              <label style="color:brown;">SOUS CATÉGORIES</label>
+                              <div *ngIf="subcategories">
+                              <div *ngFor="let subcategory of subcategories">
+                                <input type="radio" formControlName="subcategory" [value]="subcategory._id" style="display: -webkit-inline-box;margin-right: 7px;">
+                                <label>{{subcategory.name}}</label>
+                            </div>
+                           </div>
+                            </div>
+                          </div>
+
+                            
+                          
+                             
+
+                            <div class="col-12 mb-30">
+                                <label for="Description">Description</label>
+                                <textarea class="col-12" id="Description"  cols="80"  rows="3" formControlName="Description"></textarea>
+                            </div>
+
+                      
+                                    <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Enregister le produit</button>
+                                      <button type="button" class="btn btn-secondary" data-dismiss="row">Annuler</button>
+                                    </div>
+                                  
+                        </div>
+                      
+                    
+                </div>
+            </div>
+            
+            <div class="col-md-1 col-12 d-flex">
+                
+                <div class="login-reg-vertical-boder"></div>
+                
+            </div>
+            
+            <!-- Account Image -->
+            <div class="col-md-5 col-12 d-flex">
+                
+                <div class="ee-account-image">
+                    <h3>Images du produit</h3>
+                    <div class="account-image-upload">
+                      <input type="file" name="chooseFile" id="account-image-upload"  multiple="" (change)="onFileChange($event)">
+                      <label class="account-image-label" for="account-image-upload">Choisissez l'image en face</label>
+                  </div>
+
+                  <img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;"> <br/>
+                             
+                </div>
+                
+            </div>
+         
+      
+      </form>   
+    </div>
+</div><!-- Register Section End -->
